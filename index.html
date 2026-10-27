@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mitchell Buffington | Accounting &amp; Information Systems</title>
+<meta name="description" content="Accounting and information systems student at the University of Kansas. Audit controls, revenue analytics, and business apps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4f6f5; --panel:#ffffff; --ink:#18222d; --muted:#55626e;
+  --rule:#cfd8d3; --green:#1c6b50; --green-soft:#dcece5; --red:#b83a24;
+  --head:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#10171d; --panel:#17212a; --ink:#e8eeea; --muted:#a2b0ab;
+    --rule:#2b3a43; --green:#5cc19b; --green-soft:#183a2e; --red:#ef7a62;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:1.075rem/1.65 var(--body)}
+a{color:var(--green);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+header.top{border-bottom:1px solid var(--rule)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem 1.5rem;padding-top:1rem;padding-bottom:1rem}
+.mark{font:800 1.1rem var(--head);letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+nav{display:flex;gap:1.25rem;flex-wrap:wrap;font:500 .95rem var(--head)}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--green)}
+h1,h2,h3{font-family:var(--head);line-height:1.12;margin:0;letter-spacing:-.02em}
+h1{font-size:clamp(2.2rem,6vw,3.9rem);font-weight:800;max-width:17ch}
+h2{font-size:1.9rem;font-weight:700;margin-bottom:1.5rem}
+h3{font-size:1.2rem;font-weight:700}
+section{padding:4rem 0;border-top:1px solid var(--rule)}
+.hero{padding:4.5rem 0 4rem;border-top:0}
+.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:start}
+.photo{display:block;width:7.5rem;height:7.5rem;object-fit:cover;border-radius:50%;border:3px solid var(--green);margin:0 0 1.5rem;background:var(--green-soft)}
+.lede{font-size:1.2rem;max-width:34rem;margin:1.5rem 0 1.75rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{font:700 .95rem var(--head);padding:.7rem 1.15rem;border:2px solid var(--ink);color:var(--ink);text-decoration:none;border-radius:2px}
+.btn.main{background:var(--ink);color:var(--paper)}
+.btn:hover{border-color:var(--green);background:var(--green);color:#fff}
+/* ledger panel */
+.ledger{background:var(--panel);border:1px solid var(--rule);padding:1.25rem 1.4rem;font-family:var(--head)}
+.ledger caption{text-align:left;font-weight:700;font-size:.95rem;padding-bottom:.75rem;color:var(--muted)}
+.ledger table{width:100%;border-collapse:collapse}
+.ledger td{padding:.55rem 0;border-top:1px solid var(--rule);font-size:.95rem;vertical-align:baseline}
+.ledger td:last-child{text-align:right;font-weight:700}
+.ledger tr.total td{border-top:3px double var(--ink);font-size:1.05rem}
+.ledger tr.total td:last-child{color:var(--green);font-size:1.6rem}
+.tick{color:var(--red);font-weight:800;margin-right:.4rem}
+.note{font:italic .85rem var(--body);color:var(--muted);margin:.8rem 0 0}
+/* split layout */
+.split{display:grid;grid-template-columns:12rem 1fr;gap:1rem 3rem}
+.split>h2{margin:0}
+.scope{list-style:none;margin:0;padding:0}
+.scope li{padding:1rem 0;border-top:1px solid var(--rule)}
+.scope li:first-child{border-top:0;padding-top:0}
+.scope p{margin:.3rem 0 0;color:var(--muted)}
+.proj{padding:1.5rem 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:1fr 14rem;gap:.5rem 2rem}
+.proj:first-of-type{border-top:0;padding-top:0}
+.proj p{margin:.4rem 0 0}
+.tags{font:500 .85rem var(--head);color:var(--muted);align-self:start;line-height:1.7}
+.proj .flag{display:inline-block;font:700 .75rem var(--head);background:var(--green-soft);color:var(--green);padding:.1rem .5rem;margin-left:.5rem;vertical-align:middle;border-radius:2px}
+.line{list-style:none;margin:0;padding:0 0 0 1.4rem;border-left:2px solid var(--green)}
+.line li{position:relative;padding:0 0 1.5rem}
+.line li::before{content:"";position:absolute;left:calc(-1.4rem - 6px);top:.55rem;width:10px;height:10px;background:var(--paper);border:2px solid var(--green);border-radius:50%}
+.line b{font-family:var(--head)}
+.line span{display:block;color:var(--muted);font-size:.95rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.5rem 2rem}
+.skills h3{margin-bottom:.4rem}
+.skills p{margin:0;color:var(--muted)}
+footer{border-top:1px solid var(--rule);padding:2.5rem 0;color:var(--muted);font-size:.95rem}
+@media (max-width:760px){
+  .hero-grid,.split,.proj{grid-template-columns:1fr}
+  .hero{padding-top:2.5rem}
+  section{padding:3rem 0}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="mark" href="#top">Mitchell Buffington</a>
+  <nav aria-label="Sections">
+    <a href="#internship">Internship</a><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  </nav>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <img class="photo" src="headshot.jpg" alt="Portrait of Mitchell Buffington" width="120" height="120" onerror="this.remove()">
+    <h1>I find where a business leaks money, then build the fix.</h1>
+    <p class="lede">I’m an accounting and information systems student at the University of Kansas. I pair audit controls and managerial accounting with code, so the controls I design can run on their own.</p>
+    <div class="btns">
+      <a class="btn main" href="#internship">See the internship results</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </div>
+  <table class="ledger" aria-label="Internship results summary">
+    <caption>Fall 2026 retail operations internship</caption>
+    <tbody>
+      <tr><td><span class="tick" aria-hidden="true">✓</span>Audit controls</td><td>Pick walks, SOPs</td></tr>
+      <tr><td><span class="tick" aria-hidden="true">✓</span>Revenue tracking</td><td>Sales dashboard</td></tr>
+      <tr><td><span class="tick" aria-hidden="true">✓</span>Overhead</td><td>Deadstock, hosting</td></tr>
+      <tr class="total"><td>Total sales revenue</td><td>+32%</td></tr>
+    </tbody>
+  </table>
+</div></section>
+
+<section id="internship"><div class="wrap split">
+  <h2>Internship</h2>
+  <div>
+    <p style="margin-top:0">I spent the fall 2026 term as an operations and analytics intern at a Lawrence, Kansas retail business with multiple stores. My supervisor and I set five focus areas. Total sales revenue grew <strong>32%</strong> while I implemented this work.</p>
+    <ul class="scope">
+      <li><h3>Internal audit controls</h3><p>A standardized SOP manual for current and future employees, daily inventory pick walks, better storage of delivery invoices, and a weekly bulletin that shares business data with staff.</p></li>
+      <li><h3>Customer engagement and demographics</h3><p>Websites for two store locations, a review-incentive plan to drive web traffic, and work to identify the customer groups the stores should capture.</p></li>
+      <li><h3>Revenue tracking</h3><p>An earnings dashboard across stores, plus target metrics for the weaker locations.</p></li>
+      <li><h3>Reduction of overhead</h3><p>A liquidation plan for deadstock, a move to free hosting for the websites, and a scheduling app that cuts the time managers spend distributing schedules.</p></li>
+      <li><h3>System automation</h3><p>Card-cost automation for transactions under $5, a pick-walk app, and an app that logs damaged and returned goods.</p></li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap split">
+  <h2>Selected work</h2>
+  <div>
+    <!-- Add a link inside each project when its page or repo is public, e.g. <p><a href="https://github.com/YOU/REPO">View on GitHub</a></p> -->
+    <article class="proj">
+      <div>
+        <h3>Store sales dashboard<span class="flag">Internship</span></h3>
+        <p>Turns the point-of-sale Detailed Department Sales export into year-to-date views of total sales, vape sales, and THC-like product sales, so managers can spot weak periods and set targets.</p>
+      </div>
+      <div class="tags">Python · Excel · Power BI<br>Revenue analytics</div>
+    </article>
+    <article class="proj">
+      <div>
+        <h3>Daily pick-walk app<span class="flag">Internship</span></h3>
+        <p>Generates a random list of products for an employee to count each day, then compares the physical count to the system quantity. It gives a small store a repeatable inventory audit control.</p>
+      </div>
+      <div class="tags">Web app · Supabase<br>Audit controls</div>
+    </article>
+    <article class="proj">
+      <div>
+        <h3>AI security triage agent</h3>
+        <p>A Dockerized tool for Python codebases. It reads Bandit and Snyk scan results, maps how files import each other, and routes only the riskiest findings to an LLM. I validated it against a known PyYAML CVE and a deliberately vulnerable Django app, and dropped a signal that added no value over plain severity.</p>
+      </div>
+      <div class="tags">Python · LangGraph · Docker<br>tree-sitter · SARIF</div>
+    </article>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap split">
+  <h2>Experience</h2>
+  <ol class="line">
+    <li><b>Student Housing Desk Associate, University of Kansas</b><span>Aug 2025 to present</span>Protect student data under FERPA, respond to emergencies, and run audit controls over facility inventory, including keys to student apartments.</li>
+    <li><b>Assistant Manager, Casey’s General Store</b><span>Jul 2024 to Jul 2025</span>Managed budgets and labor, daily sales reconciliation and bank deposits, loss prevention, and vendor negotiations.</li>
+    <li><b>Process Technician, Plastikon Industries</b><span>Oct 2022 to Jul 2024</span>Applied Six Sigma and Lean methods to production data and worked with Quality Assurance to cut defects and material waste.</li>
+    <li><b>Lead Pharmacy Technician and Front Store Manager, CVS Health</b><span>Aug 2018 to 2022</span>Kept the books and daily ledgers for pharmacy and retail, and coordinated internal and external audits.</li>
+    <li><b>Operations Manager, Tsunami Express</b><span>Aug 2016 to Jul 2018</span>Oversaw accounting, promotions, and labor, and supported financial reporting through a company buyout.</li>
+  </ol>
+</div></section>
+
+<section id="skills"><div class="wrap split">
+  <h2>Education and skills</h2>
+  <div>
+    <p style="margin-top:0"><strong>University of Kansas.</strong> BSB in Accounting and BSB in Information Systems, expected fall 2027. Member of Beta Alpha Psi.</p>
+    <div class="skills" style="margin-top:1.5rem">
+      <div><h3>Accounting</h3><p>Managerial and financial accounting, audit controls, reconciliation</p></div>
+      <div><h3>Analytics and tools</h3><p>Advanced Excel, Power BI, Python, Google Workspace</p></div>
+      <div><h3>Operations</h3><p>Six Sigma and Lean, SOP design, team development</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap split">
+  <h2>Contact</h2>
+  <div>
+    <p style="margin-top:0">I’m looking for internships and entry-level roles in audit, accounting analytics, and technology risk.</p>
+    <p><a href="mailto:mitchellbuffington14@gmail.com">mitchellbuffington14@gmail.com</a><br>
+    <a href="https://www.linkedin.com/in/mitchbuffington" rel="noopener">linkedin.com/in/mitchbuffington</a><br>
+    Lawrence, Kansas</p>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Mitchell Buffington</div></footer>
+</body>
+</html>
